@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>677</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tuner</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #1a1a2e, stop:1 #16213e);
+    color: #ffffff;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="titleLabel">
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+    color: #00dbde;
+    background: transparent;
+}</string>
+      </property>
+      <property name="text">
+       <string>TUNER</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="startStopButton">
+         <property name="minimumSize">
+          <size>
+           <width>120</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #4facfe, stop:1 #00f2fe);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #00f2fe, stop:1 #4facfe);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #3a8bcc, stop:1 #00c6d4);
+}</string>
+         </property>
+         <property name="text">
+          <string>🎤 Начать</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="helpButton">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Show help and instructions</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #9b59b6, stop:1 #8e44ad);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #8e44ad, stop:1 #9b59b6);
+    transform: scale(1.05);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #7d3c98, stop:1 #6c3483);
+}</string>
+         </property>
+         <property name="text">
+          <string>Справка</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frequencyFrame">
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="frequencyLabel">
+         <property name="font">
+          <font>
+           <pointsize>48</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: #00dbde;
+    background: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string>--- Гц</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="noteLabel">
+         <property name="font">
+          <font>
+           <pointsize>36</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: #ff9a9e;
+    background: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="tuningWidget" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QProgressBar" name="tuningBar">
+         <property name="styleSheet">
+          <string notr="true">QProgressBar {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    height: 30px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #555;
+    border-radius: 8px;
+}</string>
+         </property>
+         <property name="minimum">
+          <number>-50</number>
+         </property>
+         <property name="maximum">
+          <number>50</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textVisible">
+          <bool>false</bool>
+         </property>
+         <property name="invertedAppearance">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="centsLabel">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: #a0aec0;
+    background: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string>Центы: ---</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="stringsFrame">
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 10px;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="e2Button">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgba(255, 107, 107, 0.3);
+    border: 2px solid rgba(255, 107, 107, 0.6);
+    border-radius: 10px;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: rgba(255, 107, 107, 0.5);
+}
+
+QPushButton:checked {
+    background-color: rgba(255, 107, 107, 0.8);
+}</string>
+         </property>
+         <property name="text">
+          <string>E₂ (6-ая)</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="aButton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgba(77, 171, 247, 0.3);
+    border: 2px solid rgba(77, 171, 247, 0.6);
+    border-radius: 10px;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: rgba(77, 171, 247, 0.5);
+}
+
+QPushButton:checked {
+    background-color: rgba(77, 171, 247, 0.8);
+}</string>
+         </property>
+         <property name="text">
+          <string>A (5-ая)</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="dButton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgba(106, 255, 182, 0.3);
+    border: 2px solid rgba(106, 255, 182, 0.6);
+    border-radius: 10px;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: rgba(106, 255, 182, 0.5);
+}
+
+QPushButton:checked {
+    background-color: rgba(106, 255, 182, 0.8);
+}</string>
+         </property>
+         <property name="text">
+          <string>D (4-ая)</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="gButton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgba(255, 218, 121, 0.3);
+    border: 2px solid rgba(255, 218, 121, 0.6);
+    border-radius: 10px;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: rgba(255, 218, 121, 0.5);
+}
+
+QPushButton:checked {
+    background-color: rgba(255, 218, 121, 0.8);
+}</string>
+         </property>
+         <property name="text">
+          <string>G (3-ая)</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bButton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgba(200, 121, 255, 0.3);
+    border: 2px solid rgba(200, 121, 255, 0.6);
+    border-radius: 10px;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: rgba(200, 121, 255, 0.5);
+}
+
+QPushButton:checked {
+    background-color: rgba(200, 121, 255, 0.8);
+}</string>
+         </property>
+         <property name="text">
+          <string>B (2-ая)</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="e4Button">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgba(255, 121, 177, 0.3);
+    border: 2px solid rgba(255, 121, 177, 0.6);
+    border-radius: 10px;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: rgba(255, 121, 177, 0.5);
+}
+
+QPushButton:checked {
+    background-color: rgba(255, 121, 177, 0.8);
+}</string>
+         </property>
+         <property name="text">
+          <string>E₄ (1-ая)</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="autoButton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+        }
+
+        QPushButton:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        QPushButton:pressed {
+            background-color: rgba(255, 255, 255, 0.3);
+        }</string>
+         </property>
+         <property name="text">
+          <string>Автопоиск</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStatusBar" name="statusbar"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>&amp;Settings</string>
+    </property>
+    <addaction name="actionCalibration"/>
+    <addaction name="actionTheme"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuSettings"/>
+  </widget>
+  <action name="actionCalibration">
+   <property name="text">
+    <string>&amp;Calibration (A4)</string>
+   </property>
+  </action>
+  <action name="actionTheme">
+   <property name="text">
+    <string>&amp;Theme</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
